@@ -2,28 +2,14 @@ navbar
 section.main-spotlight(style="background-image: url(/assets/images/spotlight.png);")
 section.main
   .row
-    .main__sidebar.col.s3
-      ul.collection
-        li.collection-item
-          div
-            | Dashboard
-            a.secondary-content(href='#!')
-              i.material-icons send
-        li.collection-item
-          div
-            | Charts
-            a.secondary-content(href='#!')
-              i.material-icons send
-        li.collection-item
-          div
-            | Settings
-            a.secondary-content(href='#!')
-              i.material-icons send
-        li.collection-item
-          div
-            | Exit
-            a.secondary-content(href='#!')
-              i.material-icons send
-    .main__content.col.s9
+    .main__sidebar.col-xs-3
+      ul.nav.nav-stacked.nav-pills
+        li.active(role="presentation")
+          a(href='#') Dashboard
+        li(role="presentation")
+          a(href='/about-us') Charts
+        li(role="presentation")
+          a(href='#') Settings
+    .main__content.col-xs-9
 
-app-footer
+footer
