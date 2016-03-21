@@ -11,5 +11,15 @@ section.main
         li(role="presentation")
           a(href='#') Settings
     .main__content.col-xs-9
+      .dropdown
+        button.btn.btn-success.dropdown-toggle(data-toggle="dropdown") --Select--
+        ul.dropdown-menu
+          li(ng-repeat="country in countries")
+            a(href="#") {{country}}
+      .btn.btn-danger(ng-click="addCountry()") Click
+      input(type="text" ng-model="username")
+      input(type="password" ng-model="password")
+      .btn.btn-warning(ng-click="login()") Login
+      p {{result}}
 
 footer
