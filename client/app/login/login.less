@@ -1,0 +1,60 @@
+.login {
+  background-color: rgba(19, 35, 47, 0.9);
+  width: 520px;
+  height: 525px;
+  margin: 0 auto;
+  color: white;
+  padding: 40px;
+  &--container {
+    margin-top: 50px;
+    //background-color: #c1bdba;
+  }
+
+  &__nav {
+    overflow: auto;
+    &__item {
+      text-align: center;
+      background-color: #1ab188;
+      height: 61px;
+      padding: 15px;
+      font-size: 20px;
+      cursor: pointer;
+      &:hover {
+        background-color: #179b77;
+      }
+
+      &--gray {
+        background-color: rgba(160, 179, 176, 0.25);
+      }
+    }
+  }
+
+  &__title {
+    font-size: 32px;
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  &__field {
+    &--container {
+    }
+
+    &__item {
+      input {
+        background-color: transparent;
+        font-size: 22px;
+        padding: 5px 10px;
+        height: 50px;
+        width: 100%;
+
+        &:active {
+          border: 1px solid red;
+        }
+      }
+    }
+  }
+
+  &__button {
+
+  }
+}

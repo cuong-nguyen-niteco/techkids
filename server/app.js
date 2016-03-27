@@ -7,12 +7,22 @@
 import express from 'express';
 import config from './config/environment';
 import http from 'http';
+import mongoose from 'mongoose';
 
 // Setup server
 var app = express();
 var server = http.createServer(app);
 require('./config/express')(app);
 require('./routes')(app);
+
+// Connect mongo
+mongoose.connect(config.mongoURI);
+var db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'DB connection error: ' + config.mongoURI));
+db.once('open', function() {
+  console.log('DB connection success! ' + config.mongoURI)
+});
 
 // Start server
 function startServer() {

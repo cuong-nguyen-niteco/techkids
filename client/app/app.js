@@ -19,7 +19,13 @@ angular.module('techkidsApp', [
       .state('aboutUs', {
         url: '/about-us',
         templateUrl: 'app/about-us/about-us.html'
-      });
+      })
+      .state('login', {
+        url: '/login',
+        templateUrl: 'app/login/login.html'
+      })
+
+    ;
 
     $locationProvider.html5Mode(true);
   });
