@@ -8,6 +8,12 @@ export function getUser(req, res) {
   });
 }
 
+export function login(req, res) {
+  User.findOne({username: req.body.username, password: req.body.password}, function(err, data){
+    res.json({err, data});
+  });
+}
+
 export function list(req, res) {
   User.find(function(err, data){
     res.json({err, data});
