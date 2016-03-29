@@ -1,9 +1,9 @@
 section.login--container
   .login
     .login__nav
-      .login__nav__item.col-xs-6(ng-click="changeState(true)" ng-class="{'login__nav__item--gray': isSignUp}") Sign Up
-      .login__nav__item.col-xs-6(ng-click="changeState(false)" ng-class="{'login__nav__item--gray': !isSignUp}") Log In
-    .login__title Sign Up for Free
+      .login__nav__item.col-xs-6(ng-click="changeState(true)" ng-class="{'login__nav__item--gray': !isSignUp}") Sign Up
+      .login__nav__item.col-xs-6(ng-click="changeState(false)" ng-class="{'login__nav__item--gray': isSignUp}") Log In
+    .login__title {{title}}
     .login__field
       .login__field--container(ng-show="isSignUp").row
         .login__field__item.form-group.col-xs-6
