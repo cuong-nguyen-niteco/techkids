@@ -8,6 +8,8 @@ import express from 'express';
 import config from './config/environment';
 import http from 'http';
 import mongoose from 'mongoose';
+import Post from './api/post/post.model';
+import Category from './api/post/post.model';
 
 // Setup server
 var app = express();
@@ -21,7 +23,28 @@ var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'DB connection error: ' + config.mongoURI));
 db.once('open', function() {
-  console.log('DB connection success! ' + config.mongoURI)
+  console.log('DB connection success! ' + config.mongoURI);
+  // var category = {
+  //   name:'Blogs',
+  //   urlName:'blogs'
+  // };
+  //
+  // Category.create(category, function(err,data) {
+  //   console.log({err,data});
+  //   //return res.json({err,data});
+  // });
+  // category.name="Events";
+  // category.urlName="events";
+  // Category.create(category, function(err,data) {
+  //   console.log({err,data});
+  //   //return res.json({err,data});
+  // });
+  // category.name="Documents";
+  // category.urlName="documents";
+  // Category.create(category, function(err,data) {
+  //   console.log({err,data});
+  //   //return res.json({err,data});
+  // });
 });
 
 // Start server

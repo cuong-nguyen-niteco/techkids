@@ -1,25 +1,20 @@
-navbar
-section.main-spotlight(style="background-image: url(/assets/images/spotlight.png);")
+
 section.main
   .row
     .main__sidebar.col-xs-3
       ul.nav.nav-stacked.nav-pills
         li.active(role="presentation")
-          a(href='#') Dashboard
+          a(href='#') Posts
         li(role="presentation")
-          a(href='/about-us') Charts
+          a(href='/about-us')
         li(role="presentation")
-          a(href='#') Settings
+          a(href='#') {{categories[0].name}}
     .main__content.col-xs-9
-      .dropdown
-        button.btn.btn-success.dropdown-toggle(data-toggle="dropdown") --Select--
-        ul.dropdown-menu
-          li(ng-repeat="country in countries")
-            a(href="#") {{country}}
-      .btn.btn-danger(ng-click="addCountry()") Click
-      input(type="text" ng-model="username")
-      input(type="password" ng-model="password")
-      .btn.btn-warning(ng-click="login()") Login
-      p {{result}}
+      .main__content__category.row
+        .dropdown
+          button.btn.btn-success.dropdown-toggle(data-toggle="dropdown") Category
+          ul.dropdown-menu
+            li(ng-repeat="category in categories" )
+              a(href="#" ng-click='onCategorySelect("{{category.urlName}}")') {{category.name}}
 
 footer

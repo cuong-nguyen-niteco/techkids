@@ -1,20 +1,20 @@
 section.login--container
   .login
     .login__nav
-      .login__nav__item.col-xs-6 Sign Up
-      .login__nav__item.login__nav__item--gray.col-xs-6 Log In
-    .login__title Sign Up for Free
+      .login__nav__item.col-xs-6(ng-click="changeState(true)" ng-class="{'login__nav__item--gray': !isSignUp}") Sign Up
+      .login__nav__item.col-xs-6(ng-click="changeState(false)" ng-class="{'login__nav__item--gray': isSignUp}") Log In
+    .login__title {{title}}
     .login__field
-      .login__field--container.row
+      .login__field--container(ng-show="isSignUp").row
         .login__field__item.form-group.col-xs-6
           input.form-control(placeholder="First Name")
         .login__field__item.form-group.col-xs-6
           input.form-control(placeholder="Last Name")
       .login__field__item.form-group
-        input.form-control(placeholder="Email")
+        input.form-control(placeholder="Email" ng-model="username")
       .login__field__item.form-group
-        input.form-control(placeholder="Password")
-    .login__nav__item Get Started
+        input.form-control(placeholder="Password" ng-model="password")
+    .login__nav__item(ng-click="click()") {{buttonText}}
 
 
 
