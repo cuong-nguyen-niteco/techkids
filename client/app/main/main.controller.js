@@ -9,7 +9,7 @@ angular.module('techkidsApp')
     });
 
     $scope.onCategorySelect = function(name) {
-      $http.get('/api/post/by-category', {category:name}).then(function(response){
+      $http.get('/api/post/category', {category:name}).then(function(response){
         console.log(response.data);
       });
     };

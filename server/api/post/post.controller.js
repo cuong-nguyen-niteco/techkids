@@ -5,7 +5,7 @@
 
 'use strict';
 import Post from './post.model'
-//import Category from './post.model'
+import Category from './post.model'
 /**
  * router.get('/', controller.getPosts);
  router.get('/:category', controller.getPostsByCategory);
@@ -19,8 +19,7 @@ import Post from './post.model'
  */
 
 export function getPosts(req, res) {
-  Post.find({},function (err, data) {
-    console.log(data);
+  Post.find(function (err, data) {
     res.json({err, data});
   });
 }
@@ -35,11 +34,11 @@ export function getPostsByCategory(req, res) {
 }
 
 export function getCategories(req, res) {
-  // Category.find(
-  //   function (err, data) {
-  //     res.json({err, data})
-  //   }
-  // )
+  Category.find(
+    function (err, data) {
+      res.json({err, data})
+    }
+  )
 }
 
 export function getPostByUrlName(req, res) {
@@ -59,7 +58,6 @@ export function addPost(req, res) {
     date: req.body.date,
     category: req.body.category
   };
-  console.log(post);
   Post.create(post, function(err,data) {
     return res.json({err,data});
   })
