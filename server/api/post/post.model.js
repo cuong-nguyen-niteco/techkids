@@ -10,11 +10,7 @@ var PostSchema = mongoose.Schema({
   category: String
 });
 
-var CategorySchema = mongoose.Schema({
-  name : String,
-  urlName: String
-});
+
 
 
 export default mongoose.model('Post', PostSchema);
-export default mongoose.model('Category', CategorySchema);

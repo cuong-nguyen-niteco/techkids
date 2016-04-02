@@ -5,7 +5,7 @@
 
 'use strict';
 import Post from './post.model'
-import Category from './post.model'
+import Category from './category.model'
 /**
  * router.get('/', controller.getPosts);
  router.get('/:category', controller.getPostsByCategory);
@@ -25,9 +25,12 @@ export function getPosts(req, res) {
 }
 
 export function getPostsByCategory(req, res) {
-  Post.findOne(
+  console.log(req.params);
+  Post.find(
     {category:req.params.category},
     function (err, data) {
+      console.log(data);
+
       res.json({err, data})
     }
   )

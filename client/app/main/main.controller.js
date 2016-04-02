@@ -3,15 +3,16 @@ angular.module('techkidsApp')
   .controller('MainController', function($scope, $http, $state){
     $scope.categories = [];
     $scope.result= "";
-
+    $scope.posts=[];
     $http.get('/api/post/categories').then(function(response){
       $scope.categories = response.data.data;
     });
 
     $scope.onCategorySelect = function(name) {
-      $http.get('/api/post/category', {category:name}).then(function(response){
-        console.log(response.data);
+      $http.get('/api/post/category/' +name).then(function(response){
+        $scope.posts=response.data.data;
       });
+      $scope.currentCategory = name;
     };
 
     // $scope.login = function() {
