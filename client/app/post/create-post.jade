@@ -2,11 +2,10 @@
   .container
     .form-group
       label Title
-      input.form-control(placeholder="Title")
+      input.form-control(placeholder="Title" ng-model="title")
     .form-group
       label Category
-      select.form-control
-        option(ng-repeat="category in categories") {{category.name}}
+      select.form-control(ng-options="category.name for category in categories" ng-model="category")
     .form-group
       label Thumbnail
       input.form-control(type="file")

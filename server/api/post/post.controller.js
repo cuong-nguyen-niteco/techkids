@@ -71,7 +71,12 @@ export function editPost(req, res) {
 }
 
 export function deletePost(req, res) {
-
+  console.log(req.body);
+  Post.findById(req.body.post._id, function (err, product) {
+    product.remove(function (err, product) {
+      res.json({err,product});
+    });
+  })
 }
 
 //

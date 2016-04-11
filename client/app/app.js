@@ -25,12 +25,22 @@ angular.module('techkidsApp', [
         templateUrl: 'app/login/login.html',
         controller: 'LoginController'
       })
-      .state('create-post', {
+      .state('create-edit-post', {
         url: '/create-post',
         templateUrl: 'app/post/create-post.html',
-        controller: 'PostController'
+        controller: 'PostController',
+        params: {post: {}}
       })  
     ;
 
     $locationProvider.html5Mode(true);
   });
+
+
+
+
+
+
+
+
+
